@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+  --bg-main: #06070d;
+  --bg-card: rgba(10, 12, 22, 0.85);
+  --bg-card-hover: rgba(16, 20, 38, 0.95);
+  
+  /* Cyber Neon Colors */
+  --primary: #ff0055;       /* Cyber Pink */
+  --primary-hover: #d60048;
+  --primary-glow: rgba(255, 0, 85, 0.4);
+  
+  --secondary: #00f0ff;     /* Cyber Cyan */
+  --secondary-glow: rgba(0, 240, 255, 0.35);
+  
+  --accent-gold: #ffb700;   /* Legendary Gold */
+  --accent-gold-glow: rgba(255, 183, 0, 0.3);
+  
+  --border-color: rgba(0, 240, 255, 0.15);
+  --border-color-hover: rgba(255, 0, 85, 0.55);
+  
+  --text-primary: #00ffff;  /* Cyan Neon HUD text */
+  --text-body: #e2e8f0;     /* Soft white body text */
+  --text-secondary: #94a3b8;
+  --text-muted: #475569;
+  
+  --success: #39ff14;       /* Matrix Green */
+  --danger: #ff003c;
+  --warning: #ffb700;
+
+  --transition-fast: 0.15s ease-out;
+  --transition-smooth: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+  --glass-bg: rgba(10, 12, 22, 0.8);
+  --glass-blur: blur(16px);
+  --shadow-glow: 0 0 15px rgba(0, 240, 255, 0.25), 0 0 30px rgba(255, 0, 85, 0.1);
+  --hud-glow: 0 0 10px rgba(0, 240, 255, 0.4);
+
+  /* Background Grid Variables */
+  --grid-color: rgba(0, 240, 255, 0.03);
+  --radial-glow-1: rgba(255, 0, 85, 0.12);
+  --radial-glow-2: rgba(0, 240, 255, 0.1);
+}
+
+/* Light Theme Variables - Clinical Laboratory HUD */
+:root[data-theme="light"] {
+  --bg-main: #f1f5f9;       /* Slate 100 */
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(224, 242, 254, 0.9); /* Cyan 100 overlay */
+  
+  --primary: #e11d48;       /* Rose Red */
+  --primary-hover: #be123c;
+  --primary-glow: rgba(225, 29, 72, 0.2);
+  
+  --secondary: #0284c7;     /* Sky Blue */
+  --secondary-glow: rgba(2, 132, 199, 0.2);
+  
+  --accent-gold: #b45309;   /* Amber Gold */
+  --accent-gold-glow: rgba(180, 83, 9, 0.15);
+  
+  --border-color: rgba(2, 132, 199, 0.2);
+  --border-color-hover: rgba(225, 29, 72, 0.4);
+  
+  --text-primary: #0369a1;  /* Cyber Dark Blue */
+  --text-body: #0f172a;     /* Slate Dark Text */
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  
+  --success: #16a34a;
+  --danger: #dc2626;
+  --warning: #ca8a04;
+  
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --shadow-glow: 0 4px 20px rgba(2, 132, 199, 0.12), 0 0 15px rgba(225, 29, 72, 0.08);
+  --hud-glow: 0 0 6px rgba(2, 132, 199, 0.2);
+
+  /* Background Grid Variables for light mode */
+  --grid-color: rgba(2, 132, 199, 0.05);
+  --radial-glow-1: rgba(225, 29, 72, 0.04);
+  --radial-glow-2: rgba(2, 132, 199, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', -apple-system, sans-serif;
+  background-color: var(--bg-main);
+  /* Grid Background adjusts automatically via variables */
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
+    radial-gradient(at 50% 0%, var(--radial-glow-1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, var(--radial-glow-2) 0px, transparent 50%);
+  background-size: 30px 30px, 30px 30px, 100% 100%, 100% 100%;
+  background-attachment: fixed;
+  color: var(--text-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbars - Neon Cyber style */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #04050a;
+  border-left: 1px solid var(--border-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border: 2px solid #04050a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Heading Fonts override for gaming titles */
+h1, h2, h3, h4, .nav-brand, .subject-code, .tab-btn, .btn {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+}

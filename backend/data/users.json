@@ -1,0 +1,22 @@
+[
+  {
+    "id": "e8b49599-479d-41cd-a0c0-60aaacf5ee08",
+    "name": "priti ",
+    "email": "pritigupta@gmail.com",
+    "passwordHash": "$2a$10$tssBPncdAIRgB47lZJHVf.C7GL4EJqxU7a7ELQKEnDZaev8mZpUQ6",
+    "branch": "CSE",
+    "semester": "3rd",
+    "role": "user",
+    "createdAt": "2026-07-18T11:35:10.197Z"
+  },
+  {
+    "id": "d11c7eee-5ef0-49a6-8a90-795d12b86890",
+    "name": "priti",
+    "email": "priytigupta@gmail.com",
+    "passwordHash": "$2a$10$Qiv3wlBbSfpw5bxApVOD6OqD8QQEwM3NkOyMhRJTGK1lm2c0LTkRq",
+    "branch": "CSE",
+    "semester": "3rd",
+    "role": "user",
+    "createdAt": "2026-07-18T11:45:35.127Z"
+  }
+]
