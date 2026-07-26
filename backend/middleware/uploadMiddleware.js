@@ -2,7 +2,12 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
-const UPLOADS_DIR = path.join(__dirname, '..', 'uploads');
+const os = require('os');
+
+// Use OS temp directory in production (e.g. Vercel Serverless Functions) to avoid read-only filesystem errors
+const UPLOADS_DIR = process.env.NODE_ENV === 'production'
+  ? path.join(os.tmpdir(), 'uploads')
+  : path.join(__dirname, '..', 'uploads');
 
 // Ensure uploads folder exists
 if (!fs.existsSync(UPLOADS_DIR)) {

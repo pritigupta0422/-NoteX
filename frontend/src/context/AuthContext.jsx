@@ -2,7 +2,19 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 
 const AuthContext = createContext();
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000/api`;
+let apiBaseUrl = import.meta.env.VITE_API_URL || '';
+
+// Fallback logic for local development vs production deployment
+if (!apiBaseUrl || apiBaseUrl.includes('your-backend-url')) {
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    apiBaseUrl = `http://${window.location.hostname}:5000/api`;
+  } else {
+    // Relative URL fallback for production (supports same-domain monorepo deployments)
+    apiBaseUrl = '/api';
+  }
+}
+
+const API_BASE_URL = apiBaseUrl;
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
